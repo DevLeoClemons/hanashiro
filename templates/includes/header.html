@@ -1,0 +1,25 @@
+<header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+  <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+    <svg class="bi me-2" width="40" height="32" aria-hidden="true">
+      <use xlink:href="#bootstrap"></use>
+    </svg>
+    <span class="fs-4">Hanashiro Máquinas</span>
+  </a>
+  <ul class="nav nav-pills">
+    <li class="nav-item">
+      <a href="/" class="nav-link {% if active_page == 'home' %}active{% endif %}">Home</a>
+    </li>
+    <li class="nav-item">
+      <a href="/fornecedores" class="nav-link {% if active_page == 'fornecedores' %}active{% endif %}">Fornecedores</a>
+    </li>
+    <li class="nav-item">
+      <a href="/produtos" class="nav-link {% if active_page == 'produtos' %}active{% endif %}">Produtos</a>
+    </li>
+    <li class="nav-item">
+      <a href="/pedidos" class="nav-link {% if active_page == 'pedidos' %}active{% endif %}">Pedidos</a>
+    </li>
+    <li class="nav-item">
+      <a href="/upload" class="nav-link {% if active_page == 'upload' %}active{% endif %}">Upload</a>
+    </li>
+  </ul>
+</header>

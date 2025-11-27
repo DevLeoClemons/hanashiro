@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Resultado da Leitura</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="p-4">
+
+  <div class="container">
+    <h1 class="mb-4">Resultado do Edital</h1>
+
+    {% if resultados %}
+      {% for item in resultados %}
+        <div class="card mb-4 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">Item {{ loop.index }}</h5>
+            <ul class="list-unstyled">
+              <li><strong>Tipo:</strong> {{ item.tipo_equipamento or '—' }}</li>
+              <li><strong>Potência:</strong> {{ item.potencia or '—' }}</li>
+              <li><strong>Motor:</strong> {{ item.tipo_motor or '—' }}</li>
+              <li><strong>Tempos:</strong> {{ item.tempos_motor or '—' }}</li>
+              <li><strong>Uso:</strong> {{ item.tipo_uso or '—' }}</li>
+              <li><strong>Características:</strong> {{ item.caracteristicas_adicionais or '—' }}</li>
+              <li><strong>Quantidade:</strong> {{ item.quantidade or '—' }}</li>
+              <li><strong>Valor Unitário:</strong> R$ {{ item.valor_unitario or '—' }}</li>
+              <li><strong>Valor Total:</strong> R$ {{ item.valor_total or '—' }}</li>
+              <li><strong>Situação:</strong> {{ item.situacao or '—' }}</li>
+              <li><strong>Critério de Julgamento:</strong> {{ item.criterio_julgamento or '—' }}</li>
+              <li><strong>Tratamento Diferenciado:</strong> {{ item.tratamento_diferenciado or '—' }}</li>
+            </ul>
+          </div>
+        </div>
+      {% endfor %}
+    {% else %}
+      <div class="alert alert-warning">Nenhuma informação encontrada no PDF.</div>
+    {% endif %}
+
+    <a href="/upload" class="btn btn-secondary">Voltar</a>
+  </div>
+
+</body>
+</html>
